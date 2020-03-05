@@ -66,6 +66,10 @@ The current about window, if any.
 
 Focus to the current about window.
 
+### `.isOpen ()`
+
+Returns a boolean indicating whether the about window is open or not.
+
 ### `.open ( options )`
 
 Focus to the current about window, or create one and focus to it.

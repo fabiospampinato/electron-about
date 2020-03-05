@@ -34,6 +34,12 @@ const About = {
 
   },
 
+  isOpen (): boolean {
+
+    return !!About.window;
+
+  },
+
   open ( options: Options ): void {
 
     if ( !About.window ) {
