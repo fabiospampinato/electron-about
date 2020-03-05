@@ -100,7 +100,7 @@ const About = {
 
   toggle ( options: Options, force?: boolean ): void {
 
-    force = typeof force === 'boolean' ? force : !About.isOpen;
+    force = typeof force === 'boolean' ? force : !About.isOpen ();
 
     if ( force ) return About.open ( options );
 
