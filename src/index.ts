@@ -55,7 +55,10 @@ const About = {
         icon: options.icon,
         backgroundColor: '#ececec',
         webPreferences: {
+          devTools: false,
+          nodeIntegration: false,
           javascript: false,
+          sandbox: true,
           webSecurity: false // In order to be able to load `file://` files
         }
       };
