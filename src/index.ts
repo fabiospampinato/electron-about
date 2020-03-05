@@ -71,8 +71,6 @@ const About = {
 
       About.window = new BrowserWindow ( windowOptions );
 
-      About.window.once ( 'close', () => delete About.window );
-
       About.focus ();
 
       const html = About.makeHTML ( options ).trim (),
@@ -95,6 +93,8 @@ const About = {
     if ( !win ) return;
 
     win.close ();
+
+    delete About.window;
 
   },
 
