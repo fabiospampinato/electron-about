@@ -98,6 +98,16 @@ const About = {
 
   },
 
+  toggle ( options: Options, force?: boolean ): void {
+
+    force = typeof force === 'boolean' ? force : !About.isOpen;
+
+    if ( force ) return About.open ( options );
+
+    return About.close ();
+
+  },
+
   makeMenuItem ( appName: string, options: Options ): MenuItemConstructorOptions {
 
     return {

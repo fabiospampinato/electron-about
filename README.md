@@ -78,6 +78,10 @@ Focus to the current about window, or create one and focus to it.
 
 Close the current about window.
 
+### `.toggle ( options )`
+
+Open or close the about window.
+
 ### `.makeMenuItem ( appName, options )`
 
 Make a menu item which opens the about window.
