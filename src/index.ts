@@ -62,7 +62,11 @@ const About = {
         backgroundColor: '#ececec',
         webPreferences: {
           devTools: false,
+          disableDialogs: true,
+          enableRemoteModule: false,
+          nativeWindowOpen: true,
           nodeIntegration: false,
+          nodeIntegrationInWorker: false,
           javascript: false,
           sandbox: true,
           webSecurity: false // In order to be able to load `file://` files
