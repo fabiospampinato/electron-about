@@ -17,20 +17,8 @@ const About = {
 
     if ( !win ) return;
 
-    if ( win['__about_loaded'] ) {
-
-      win.show ();
-      win.focus ();
-
-    } else {
-
-      win.webContents.once ( 'did-finish-load', () => {
-        win['__about_loaded'] = true;
-        win.show ();
-        win.focus ();
-      });
-
-    }
+    win.show ();
+    win.focus ();
 
   },
 
@@ -75,7 +63,8 @@ const About = {
 
       About.window = new BrowserWindow ( windowOptions );
 
-      About.focus ();
+      About.window.once ( 'closed', () => delete About.window );
+      About.window.webContents.once ( 'did-finish-load', About.focus );
 
       const html = About.makeHTML ( options ).trim (),
             html64 = Buffer.from ( html ).toString ( 'base64' );
