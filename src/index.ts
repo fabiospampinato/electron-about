@@ -57,7 +57,7 @@ const About = {
           nodeIntegrationInWorker: false,
           javascript: false,
           sandbox: true,
-          webSecurity: false // In order to be able to load `file://` files
+          webSecurity: true
         }
       };
 
