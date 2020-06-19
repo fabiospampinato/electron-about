@@ -63,8 +63,8 @@ const About = {
 
       About.window = new BrowserWindow ( windowOptions );
 
-      About.window.once ( 'closed', () => delete About.window );
-      About.window.webContents.once ( 'did-finish-load', About.focus );
+      About.window.once ( 'closed', () => { About.cleanup (); options.onClose?.(); } );
+      About.window.webContents.once ( 'did-finish-load', () => { About.focus (); options.onOpen?.(); } );
 
       const html = About.makeHTML ( options ).trim (),
             html64 = Buffer.from ( html ).toString ( 'base64' );
@@ -79,6 +79,12 @@ const About = {
 
   },
 
+  cleanup: (): void => {
+
+    delete About.window;
+
+  },
+
   close (): void {
 
     const win = About.window;
@@ -86,8 +92,6 @@ const About = {
     if ( !win ) return;
 
     win.close ();
-
-    delete About.window;
 
   },
 
