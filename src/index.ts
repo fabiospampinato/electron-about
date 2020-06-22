@@ -46,7 +46,6 @@ const About = {
         useContentSize: true,
         center: true,
         show: false,
-        icon: options.icon,
         backgroundColor: '#ececec',
         webPreferences: {
           devTools: false,
